@@ -14,12 +14,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var className: UITextField!
     
     @IBOutlet weak var startTime1: UITextField!
-    @IBOutlet weak var startTime2: UITextField!
-    @IBOutlet weak var startTime3: UITextField!
     
     @IBOutlet weak var endTime1: UITextField!
-    @IBOutlet weak var endTime2: UITextField!
-    @IBOutlet weak var endTIme3: UITextField!
     
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
@@ -39,12 +35,54 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         var newClass = Classes(entity: ent!, insertIntoManagedObjectContext: context)
         newClass.classname = className.text
-        //newClass.time1 = startTime1.text
+        newClass.startTime = startTime1.text.toInt()!
+        newClass.endTime = endTime1.text.toInt()!
+        
+        if monSwitch.on {
+            newClass.monday = 1;
+        } else {
+            newClass.monday = 0;
+        }
+        
+        if tuesSwitch.on {
+            newClass.tuesday = 1;
+        } else {
+            newClass.tuesday = 0;
+        }
+        
+        if wedSwtich.on {
+            newClass.wednesday = 1;
+        } else {
+            newClass.wednesday = 0;
+        }
+        
+        if thursSwitch.on {
+            newClass.thursday = 1;
+        } else {
+            newClass.thursday = 0;
+        }
+        
+        if friSwitch.on {
+            newClass.friday = 1;
+        } else {
+            newClass.friday = 0;
+        }
         
         context.save(nil)
         
+        
         println(newClass)
         println("Obj saved")
+        
+        className.text = nil
+        startTime1.text = nil
+        endTime1.text = nil
+        
+        monSwitch.on = false
+        tuesSwitch.on = false
+        wedSwtich.on = false
+        thursSwitch.on = false
+        friSwitch.on = false
         
     }
     
@@ -62,8 +100,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if results.count > 0 {
             for name in results {
                 var thisClassName = name as Classes
-                println("the class name is \(thisClassName.classname)")
+                println("the class name is \(thisClassName.classname) and it starts at \(thisClassName.startTime) and ends at \(thisClassName.endTime)")
+                if thisClassName.monday == 1 {
+                    println("And it is on monday")
+                }
             }
+            
             println("\(results.count) found")
         } else {
             println ("No Results found")

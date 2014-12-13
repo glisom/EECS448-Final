@@ -12,6 +12,13 @@ import CoreData
 @objc(Classes)
 class Classes: NSManagedObject {
     @NSManaged var classname:String
+    @NSManaged var startTime:Int
+    @NSManaged var endTime:Int
+    @NSManaged var monday:Boolean
+    @NSManaged var tuesday:Boolean
+    @NSManaged var wednesday:Boolean
+    @NSManaged var thursday:Boolean
+    @NSManaged var friday: Boolean
      
     
 }
