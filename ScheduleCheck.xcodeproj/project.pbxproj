@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B98D4E51A3CDCAE00A46761 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98D4E41A3CDCAE00A46761 /* CoreData.framework */; };
+		7B98D5191A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B98D5171A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld */; };
+		7B98D51B1A3CE00400A46761 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98D51A1A3CE00400A46761 /* Classes.swift */; };
 		7BA2A5261A3899F900003489 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2A5251A3899F900003489 /* AppDelegate.swift */; };
 		7BA2A5281A3899F900003489 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2A5271A3899F900003489 /* ViewController.swift */; };
 		7BA2A52B1A3899F900003489 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BA2A5291A3899F900003489 /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B98D4E41A3CDCAE00A46761 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7B98D5181A3CDD1300A46761 /* ScheduleCheck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleCheck.xcdatamodel; sourceTree = "<group>"; };
+		7B98D51A1A3CE00400A46761 /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		7BA2A5201A3899F900003489 /* ScheduleCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA2A5241A3899F900003489 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA2A5251A3899F900003489 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B98D4E51A3CDCAE00A46761 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,7 @@
 		7BA2A5171A3899F900003489 = {
 			isa = PBXGroup;
 			children = (
+				7B98D4E41A3CDCAE00A46761 /* CoreData.framework */,
 				7BA2A5221A3899F900003489 /* ScheduleCheck */,
 				7BA2A5381A3899F900003489 /* ScheduleCheckTests */,
 				7BA2A5211A3899F900003489 /* Products */,
@@ -82,6 +90,8 @@
 				7BA2A5291A3899F900003489 /* Main.storyboard */,
 				7BA2A52C1A3899F900003489 /* Images.xcassets */,
 				7BA2A52E1A3899F900003489 /* LaunchScreen.xib */,
+				7B98D5171A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld */,
+				7B98D51A1A3CE00400A46761 /* Classes.swift */,
 				7BA2A5231A3899F900003489 /* Supporting Files */,
 			);
 			path = ScheduleCheck;
@@ -214,6 +224,8 @@
 			files = (
 				7BA2A5281A3899F900003489 /* ViewController.swift in Sources */,
 				7BA2A5261A3899F900003489 /* AppDelegate.swift in Sources */,
+				7B98D51B1A3CE00400A46761 /* Classes.swift in Sources */,
+				7B98D5191A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +417,7 @@
 				7BA2A5411A3899FA00003489 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BA2A5421A3899FA00003489 /* Build configuration list for PBXNativeTarget "ScheduleCheckTests" */ = {
 			isa = XCConfigurationList;
@@ -413,8 +426,22 @@
 				7BA2A5441A3899FA00003489 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7B98D5171A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7B98D5181A3CDD1300A46761 /* ScheduleCheck.xcdatamodel */,
+			);
+			currentVersion = 7B98D5181A3CDD1300A46761 /* ScheduleCheck.xcdatamodel */;
+			path = ScheduleCheck.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7BA2A5181A3899F900003489 /* Project object */;
 }
