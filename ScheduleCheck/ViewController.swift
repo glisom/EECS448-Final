@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let ent = NSEntityDescription.entityForName("Classes", inManagedObjectContext: context)
         
-        var newClass = Classes(entity: ent!, insertIntoManagedObjectContext: context)
+        var newClass = Class(entity: ent!, insertIntoManagedObjectContext: context)
         newClass.classname = className.text
         newClass.startTime = startTime1.text.toInt()!
         newClass.endTime = endTime1.text.toInt()!
@@ -90,7 +90,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
-        let request = NSFetchRequest(entityName: "Classes")
+        let request = NSFetchRequest(entityName: "Class")
         request.returnsObjectsAsFaults = false;
         
         request.predicate = NSPredicate(format: "classname = %@", className.text)
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if results.count > 0 {
             for name in results {
-                var thisClassName = name as Classes
+                var thisClassName = name as Class
                 println("the class name is \(thisClassName.classname) and it starts at \(thisClassName.startTime) and ends at \(thisClassName.endTime)")
                 if thisClassName.monday == 1 {
                     println("And it is on monday")

@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-@objc(Classes)
-class Classes: NSManagedObject {
+@objc(Class)
+class Class: NSManagedObject {
     @NSManaged var classname:String
     @NSManaged var startTime:Int
     @NSManaged var endTime:Int
@@ -22,3 +22,4 @@ class Classes: NSManagedObject {
      
     
 }
+
