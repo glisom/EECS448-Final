@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
-        let ent = NSEntityDescription.entityForName("Classes", inManagedObjectContext: context)
+        let ent = NSEntityDescription.entityForName("Class", inManagedObjectContext: context)
         
         var newClass = Class(entity: ent!, insertIntoManagedObjectContext: context)
         newClass.classname = className.text
@@ -84,9 +84,25 @@ class ViewController: UIViewController, UITextFieldDelegate {
         thursSwitch.on = false
         friSwitch.on = false
         
+        let request = NSFetchRequest(entityName: "Class")
+        request.returnsObjectsAsFaults = false;
+        var results:NSArray = context.executeFetchRequest(request, error: nil)!
+        
+        if results.count == 5 {
+            doneButton.hidden = false
+            doneButton.enabled = true
+            createButton.enabled = false
+            createButton.titleLabel?.textColor = UIColor.redColor()
+            
+            var doneAlert = UIAlertController(title: "Done!", message: "You can now press done and generate your schedules", preferredStyle: .Alert)
+            let doneAction = UIAlertAction(title: "Okay", style: .Default) { (action: UIAlertAction!) -> Void in }
+            doneAlert.addAction(doneAction)
+            presentViewController(doneAlert, animated: true, completion: nil)
+            
+        }
     }
     
-    @IBAction func doneClicked(sender: AnyObject) {
+    @IBAction func doneClicked(sender: UIButton) {
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
@@ -118,7 +134,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

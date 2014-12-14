@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B79F7551A3E1EB900CB2C5F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F7541A3E1EB900CB2C5F /* Schedule.swift */; };
 		7B98D4E51A3CDCAE00A46761 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98D4E41A3CDCAE00A46761 /* CoreData.framework */; };
 		7B98D5191A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B98D5171A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld */; };
 		7B98D5321A3D36DD00A46761 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B98D5311A3D36DD00A46761 /* Class.swift */; };
@@ -30,9 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B79F7541A3E1EB900CB2C5F /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		7B79F7561A3E204B00CB2C5F /* ScheduleCheck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScheduleCheck-Bridging-Header.h"; sourceTree = "<group>"; };
 		7B98D4E41A3CDCAE00A46761 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7B98D5181A3CDD1300A46761 /* ScheduleCheck.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleCheck.xcdatamodel; sourceTree = "<group>"; };
-		7B98D51F1A3D33E000A46761 /* ScheduleCheck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScheduleCheck-Bridging-Header.h"; sourceTree = "<group>"; };
 		7B98D5311A3D36DD00A46761 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		7B98D5331A3D43BC00A46761 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		7BA2A5201A3899F900003489 /* ScheduleCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,9 +97,10 @@
 				7BA2A52C1A3899F900003489 /* Images.xcassets */,
 				7BA2A52E1A3899F900003489 /* LaunchScreen.xib */,
 				7B98D5171A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld */,
+				7B79F7541A3E1EB900CB2C5F /* Schedule.swift */,
 				7B98D5311A3D36DD00A46761 /* Class.swift */,
+				7B79F7561A3E204B00CB2C5F /* ScheduleCheck-Bridging-Header.h */,
 				7BA2A5231A3899F900003489 /* Supporting Files */,
-				7B98D51F1A3D33E000A46761 /* ScheduleCheck-Bridging-Header.h */,
 			);
 			path = ScheduleCheck;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B79F7551A3E1EB900CB2C5F /* Schedule.swift in Sources */,
 				7B98D5341A3D43BC00A46761 /* ScheduleViewController.swift in Sources */,
 				7BA2A5281A3899F900003489 /* ViewController.swift in Sources */,
 				7BA2A5261A3899F900003489 /* AppDelegate.swift in Sources */,
