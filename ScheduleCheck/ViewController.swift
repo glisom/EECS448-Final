@@ -9,6 +9,46 @@
 import UIKit
 import CoreData
 
+class studentClass {
+    
+    init(name:String, start:Int, end:Int, days:[Bool]) {
+        className = name
+        let cTime = classTime(start: start,end: end,days: days)
+        timesOffered?.append(cTime)
+    }
+    
+    func addTime(start:Int, end:Int, days:[Bool]) -> Bool {
+        if timesOffered?.count < 3 {
+            let cTime = classTime(start: start, end: end, days: days)
+            timesOffered?.append(cTime)
+            return true
+        } else {
+            return false
+        }
+        
+        
+    }
+    var className:String?
+    var timesOffered:[classTime]?
+    
+    
+}
+
+class classTime {
+    
+    init(start:Int, end:Int, days:[Bool]) {
+        startTime1 = start
+        endTime1 = end
+        days1 = days
+    }
+    
+    var startTime1:Int?
+    
+    var endTime1:Int?
+    
+    var days1:Array<Bool>?
+}
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var className: UITextField!
@@ -37,6 +77,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         newClass.classname = className.text
         newClass.startTime = startTime1.text.toInt()!
         newClass.endTime = endTime1.text.toInt()!
+        
         
         if monSwitch.on {
             newClass.monday = 1;
