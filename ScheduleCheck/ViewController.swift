@@ -25,13 +25,9 @@ class studentClass {
         } else {
             return false
         }
-        
-        
     }
     var className:String?
     var timesOffered:[classTime]?
-    
-    
 }
 
 class classTime {
@@ -51,6 +47,10 @@ class classTime {
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    var newClass:Bool = true
+    
+    var classesList:[studentClass]?
+    
     @IBOutlet var className: UITextField!
     
     @IBOutlet weak var startTime1: UITextField!
@@ -66,8 +66,124 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var thursSwitch: UISwitch!
     @IBOutlet weak var friSwitch: UISwitch!
     
+    var classDays:[Bool] = [false,false,false,false,false]
+    
     @IBAction func createClicked(sender: AnyObject) {
         
+        if monSwitch.on {
+            classDays[0] = true
+        }
+        if tuesSwitch.on {
+            classDays[1] = true
+        }
+        
+        if wedSwtich.on {
+            classDays[2] = true
+        }
+        if thursSwitch.on {
+            classDays[3] = true
+        }
+        
+        if friSwitch.on {
+            classDays[4] = true
+        }
+        
+        
+        if newClass == true {
+            let myClass = studentClass(name: className.text, start: startTime1.text.toInt()!, end: endTime1.text.toInt()!, days: classDays)
+            classesList?.append(myClass)
+            var createAlert = UIAlertController(title: "Class created!", message: "Do you want to add another time this class is available?\n", preferredStyle: .Alert)
+            
+            let noAction = UIAlertAction(title: "Nope", style: .Default) {
+                (action: UIAlertAction!) -> Void in
+                self.monSwitch.on = false
+                self.tuesSwitch.on = false
+                self.wedSwtich.on = false
+                self.thursSwitch.on = false
+                self.friSwitch.on = false
+                self.startTime1.text = nil
+                self.endTime1.text = nil
+                self.className.text = nil
+                println("New Class!")
+                self.newClass = true
+                self.createButton.titleLabel?.text = "Create"
+            }
+            
+            let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: {
+                (alert: UIAlertAction!) -> Void in
+                self.monSwitch.on = false
+                self.tuesSwitch.on = false
+                self.wedSwtich.on = false
+                self.thursSwitch.on = false
+                self.friSwitch.on = false
+                self.startTime1.text = nil
+                self.endTime1.text = nil
+                
+                println("Entering another time for same class")
+                self.newClass = false
+                self.createButton.titleLabel?.text = "Add"
+            })
+            createAlert.addAction(yesAction)
+            createAlert.addAction(noAction)
+            presentViewController(createAlert, animated: true, completion: nil)
+        }
+        
+        if newClass == false {
+            classesList?.last?.addTime(startTime1.text.toInt()!, end: endTime1.text.toInt()!, days: classDays)
+            
+            var addAlert = UIAlertController(title: "Time added to \(className.text)", message: "Would you like to add a third time?", preferredStyle: .Alert)
+            let yesAlert = UIAlertAction(title: "Yes", style: .Default, handler: {
+                (action: UIAlertAction!) -> Void in
+                self.monSwitch.on = false
+                self.tuesSwitch.on = false
+                self.wedSwtich.on = false
+                self.thursSwitch.on = false
+                self.friSwitch.on = false
+                self.startTime1.text = nil
+                self.endTime1.text = nil
+                
+                println("Entering another time for same class")
+                self.newClass = false
+                self.createButton.titleLabel?.text = "Add"
+            })
+            
+            let noAction = UIAlertAction(title: "Nope", style: .Default) {
+                (action: UIAlertAction!) -> Void in
+                self.monSwitch.on = false
+                self.tuesSwitch.on = false
+                self.wedSwtich.on = false
+                self.thursSwitch.on = false
+                self.friSwitch.on = false
+                self.startTime1.text = nil
+                self.endTime1.text = nil
+                self.className.text = nil
+                println("New Class!")
+                self.newClass = true
+                self.createButton.titleLabel?.text = "Create"
+            }
+            
+            
+        }
+        
+        if classesList?.endIndex >= 4 {
+            doneButton.hidden = false
+            doneButton.enabled = true
+            createButton.enabled = false
+            createButton.titleLabel?.textColor = UIColor.redColor()
+            
+            var doneAlert = UIAlertController(title: "Done!", message: "You can now press done and generate your schedules", preferredStyle: .Alert)
+            let doneAction = UIAlertAction(title: "Okay", style: .Default) { (action: UIAlertAction!) -> Void in }
+            doneAlert.addAction(doneAction)
+            presentViewController(doneAlert, animated: true, completion: nil)
+            
+        }
+        
+        
+        
+        //******************************************************************************//
+        //  Actually more of what the Save funtion will do, above is more realistic"    //
+        //******************************************************************************//
+        /*
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
@@ -141,6 +257,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             presentViewController(doneAlert, animated: true, completion: nil)
             
         }
+        */
     }
     
     @IBAction func doneClicked(sender: UIButton) {
