@@ -18,14 +18,16 @@ protocol ScheduleListViewControllerDelegate{
 class ScheduleListViewController: UITableViewController {
     var delegate:ScheduleListViewController? = nil
     
-    var classesList:Array<studentClass> = [] 
+    var schedules:[[studentClass]] = []
+    
+    var selectedRow = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        println("The list has \(classesList.endIndex) in it")
+
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
@@ -44,18 +46,23 @@ class ScheduleListViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return self.schedules.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
-        // Configure the cell...
+        cell.textLabel?.text = "Schedule \(self.schedules[indexPath.row].count) "
 
         return cell
     }
-    */
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("You selected cell #\(indexPath.row)!")
+        selectedRow = indexPath.row
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,14 +99,16 @@ class ScheduleListViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toScheduleView" {
+            let scheduleVC:ScheduleViewController = segue.destinationViewController as ScheduleViewController
+            scheduleVC.currSchedule = schedules[selectedRow]
+        }
     }
-    */
+    
 
 }

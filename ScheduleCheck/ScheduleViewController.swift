@@ -14,6 +14,7 @@ import CoreData
 class ScheduleViewController: UIViewController {
     
     var classColor = UIColor(red: 0.42, green: 1, blue: 0.49, alpha: 1.00)
+    var currSchedule:[studentClass] = []
     
     @IBOutlet var Mon8:UILabel!
     @IBOutlet var Mon9:UILabel!

@@ -14,20 +14,20 @@ class studentClass {
     init(name:String, start:Int, end:Int, days:[Bool]) {
         className = name
         let cTime = classTime(start: start,end: end,days: days)
-        timesOffered?.append(cTime)
+        timesOffered.append(cTime)
     }
     
     func addTime(start:Int, end:Int, days:[Bool]) -> Bool {
-        if timesOffered?.count < 3 {
+        if timesOffered.count < 3 {
             let cTime = classTime(start: start, end: end, days: days)
-            timesOffered?.append(cTime)
+            timesOffered.append(cTime)
             return true
         } else {
             return false
         }
     }
     var className:String?
-    var timesOffered:[classTime]?
+    var timesOffered:[classTime] = []
 }
 
 class classTime {
@@ -42,14 +42,14 @@ class classTime {
     
     var endTime1:Int?
     
-    var days1:Array<Bool>?
+    var days1:Array<Bool> = []
 }
 
 class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewControllerDelegate {
     
     var newClass:Bool = true
     
-    var classesList:Array<studentClass> = []
+    var classesList:[studentClass] = []
     
     @IBOutlet var className: UITextField!
     
@@ -67,6 +67,14 @@ class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewCon
     @IBOutlet weak var friSwitch: UISwitch!
     
     var classDays:[Bool] = [false,false,false,false,false]
+    
+    var schedules:[[studentClass]] = []
+    
+    func schedule (list:[studentClass]) -> [studentClass] {
+        
+        
+        return list
+    }
     
     @IBAction func createClicked(sender: AnyObject) {
         
@@ -273,6 +281,9 @@ class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewCon
     }
     
     @IBAction func doneClicked(sender: UIButton) {
+        
+        schedules.append(schedule(classesList))
+        
     //******************************************************************************//
     //  Ignore for now...                                                           //
     //******************************************************************************//
@@ -314,7 +325,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewCon
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "ScheduleList"{
             let vc = segue.destinationViewController as ScheduleListViewController
-            vc.classesList = classesList
+            vc.schedules = schedules
             //vc.delegate = self
         }
     }
