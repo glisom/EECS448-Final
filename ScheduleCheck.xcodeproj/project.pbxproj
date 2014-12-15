@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B643F381A3E98880088C5E5 /* ScheduleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F371A3E98880088C5E5 /* ScheduleListViewController.swift */; };
 		7B79F7551A3E1EB900CB2C5F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F7541A3E1EB900CB2C5F /* Schedule.swift */; };
 		7B98D4E51A3CDCAE00A46761 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98D4E41A3CDCAE00A46761 /* CoreData.framework */; };
 		7B98D5191A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B98D5171A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B643F371A3E98880088C5E5 /* ScheduleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleListViewController.swift; sourceTree = "<group>"; };
 		7B79F7541A3E1EB900CB2C5F /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		7B79F7561A3E204B00CB2C5F /* ScheduleCheck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScheduleCheck-Bridging-Header.h"; sourceTree = "<group>"; };
 		7B98D4E41A3CDCAE00A46761 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -92,8 +94,9 @@
 			children = (
 				7BA2A5251A3899F900003489 /* AppDelegate.swift */,
 				7BA2A5271A3899F900003489 /* ViewController.swift */,
-				7BA2A5291A3899F900003489 /* Main.storyboard */,
+				7B643F371A3E98880088C5E5 /* ScheduleListViewController.swift */,
 				7B98D5331A3D43BC00A46761 /* ScheduleViewController.swift */,
+				7BA2A5291A3899F900003489 /* Main.storyboard */,
 				7BA2A52C1A3899F900003489 /* Images.xcassets */,
 				7BA2A52E1A3899F900003489 /* LaunchScreen.xib */,
 				7B98D5171A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld */,
@@ -235,6 +238,7 @@
 				7BA2A5281A3899F900003489 /* ViewController.swift in Sources */,
 				7BA2A5261A3899F900003489 /* AppDelegate.swift in Sources */,
 				7B98D5321A3D36DD00A46761 /* Class.swift in Sources */,
+				7B643F381A3E98880088C5E5 /* ScheduleListViewController.swift in Sources */,
 				7B98D5191A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -401,7 +401,7 @@
                                 </state>
                                 <connections>
                                     <action selector="doneClicked:" destination="x58-Tc-V4S" eventType="touchUpInside" id="ciy-JY-f9I"/>
-                                    <segue destination="spc-pA-gGv" kind="show" id="Lkh-up-5ZK"/>
+                                    <segue destination="RSH-5B-keC" kind="show" identifier="ScheduleList" id="lee-J7-QYC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -468,6 +468,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soR-dm-QNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1742" y="355"/>
+        </scene>
+        <!--Schedule List View Controller-->
+        <scene sceneID="viS-vO-GFn">
+            <objects>
+                <tableViewController id="RSH-5B-keC" customClass="ScheduleListViewController" customModule="ScheduleCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ntJ-0d-2ic">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vfJ-Ph-D3M">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vfJ-Ph-D3M" id="PRX-cD-BJh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="spc-pA-gGv" kind="show" id="dtm-84-OAP"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RSH-5B-keC" id="e07-Rh-xn8"/>
+                            <outlet property="delegate" destination="RSH-5B-keC" id="mof-aE-lbh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L0C-Ep-vY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404.5" y="349.5"/>
         </scene>
         <!--Schedule View Controller-->
         <scene sceneID="xSh-Ne-VXt">
@@ -2173,7 +2201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwK-BS-oyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2410.5" y="355.5"/>
+            <point key="canvasLocation" x="3180" y="354.75"/>
         </scene>
         <!--Saved Schedules-->
         <scene sceneID="DxQ-e0-Jzq">

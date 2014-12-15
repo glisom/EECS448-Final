@@ -45,11 +45,11 @@ class classTime {
     var days1:Array<Bool>?
 }
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewControllerDelegate {
     
     var newClass:Bool = true
     
-    var classesList:[studentClass]?
+    var classesList:Array<studentClass> = []
     
     @IBOutlet var className: UITextField!
     
@@ -91,49 +91,59 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if newClass == true {
             let myClass = studentClass(name: className.text, start: startTime1.text.toInt()!, end: endTime1.text.toInt()!, days: classDays)
-            classesList?.append(myClass)
-            var createAlert = UIAlertController(title: "Class created!", message: "Do you want to add another time this class is available?\n", preferredStyle: .Alert)
+            classesList.append(myClass)
+            println(classesList.endIndex)
             
-            let noAction = UIAlertAction(title: "Nope", style: .Default) {
-                (action: UIAlertAction!) -> Void in
-                self.monSwitch.on = false
-                self.tuesSwitch.on = false
-                self.wedSwtich.on = false
-                self.thursSwitch.on = false
-                self.friSwitch.on = false
-                self.startTime1.text = nil
-                self.endTime1.text = nil
-                self.className.text = nil
-                println("New Class!")
-                self.newClass = true
-                self.createButton.titleLabel?.text = "Create"
-            }
-            
-            let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: {
-                (alert: UIAlertAction!) -> Void in
-                self.monSwitch.on = false
-                self.tuesSwitch.on = false
-                self.wedSwtich.on = false
-                self.thursSwitch.on = false
-                self.friSwitch.on = false
-                self.startTime1.text = nil
-                self.endTime1.text = nil
+            if classesList.endIndex < 5 {
+                var createAlert = UIAlertController(title: "Class created!", message: "Do you want to add another time this class is available?\n", preferredStyle: .Alert)
                 
-                println("Entering another time for same class")
-                self.newClass = false
-                self.createButton.titleLabel?.text = "Add"
-            })
-            createAlert.addAction(yesAction)
-            createAlert.addAction(noAction)
-            presentViewController(createAlert, animated: true, completion: nil)
+                let noAction = UIAlertAction(title: "Nope", style: .Cancel) {
+                    (action: UIAlertAction!) -> Void in
+                    self.monSwitch.on = false
+                    self.tuesSwitch.on = false
+                    self.wedSwtich.on = false
+                    self.thursSwitch.on = false
+                    self.friSwitch.on = false
+                    self.startTime1.text = nil
+                    self.endTime1.text = nil
+                    self.className.text = nil
+                    println("New Class!")
+                    self.newClass = true
+                    self.createButton.setTitle("Create", forState: UIControlState.Normal)
+                    self.createButton.setTitle("Create", forState: UIControlState.Selected)
+                }
+                
+                let yesAction = UIAlertAction(title: "Yes", style: .Default, handler: {
+                    (alert: UIAlertAction!) -> Void in
+                    self.newClass = false
+                    self.createButton.setTitle("Add", forState: UIControlState.Normal)
+                    self.createButton.setTitle("Add", forState: UIControlState.Selected)
+                    self.monSwitch.on = false
+                    self.tuesSwitch.on = false
+                    self.wedSwtich.on = false
+                    self.thursSwitch.on = false
+                    self.friSwitch.on = false
+                    self.startTime1.text = nil
+                    self.endTime1.text = nil
+                    
+                    println("Entering another time for same class")
+                    
+                })
+                createAlert.addAction(yesAction)
+                createAlert.addAction(noAction)
+                presentViewController(createAlert, animated: true, completion: nil)
+            }
         }
         
         if newClass == false {
-            classesList?.last?.addTime(startTime1.text.toInt()!, end: endTime1.text.toInt()!, days: classDays)
+            classesList.last?.addTime(startTime1.text.toInt()!, end: endTime1.text.toInt()!, days: classDays)
             
             var addAlert = UIAlertController(title: "Time added to \(className.text)", message: "Would you like to add a third time?", preferredStyle: .Alert)
             let yesAlert = UIAlertAction(title: "Yes", style: .Default, handler: {
                 (action: UIAlertAction!) -> Void in
+                self.newClass = false
+                self.createButton.setTitle("Add", forState: UIControlState.Normal)
+                self.createButton.setTitle("Add", forState: UIControlState.Selected)
                 self.monSwitch.on = false
                 self.tuesSwitch.on = false
                 self.wedSwtich.on = false
@@ -143,8 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.endTime1.text = nil
                 
                 println("Entering another time for same class")
-                self.newClass = false
-                self.createButton.titleLabel?.text = "Add"
+                
             })
             
             let noAction = UIAlertAction(title: "Nope", style: .Default) {
@@ -159,13 +168,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.className.text = nil
                 println("New Class!")
                 self.newClass = true
-                self.createButton.titleLabel?.text = "Create"
+                self.createButton.setTitle("Create", forState: UIControlState.Normal)
+                self.createButton.setTitle("Create", forState: UIControlState.Selected)
             }
-            
+            addAlert.addAction(yesAlert)
+            addAlert.addAction(noAction)
+            presentViewController(addAlert, animated: true, completion: nil)
             
         }
         
-        if classesList?.endIndex >= 4 {
+        if classesList.endIndex == 5 {
             doneButton.hidden = false
             doneButton.enabled = true
             createButton.enabled = false
@@ -261,6 +273,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneClicked(sender: UIButton) {
+    //******************************************************************************//
+    //  Ignore for now...                                                           //
+    //******************************************************************************//
+    /*
+
+
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
@@ -285,9 +303,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             println ("No Results found")
         }
         
+        */
     }
     
+    func myVCDidFinish(controller: ScheduleListViewController, schedule:[studentClass]) {
+        
+        controller.navigationController?.popViewControllerAnimated(true)
+    }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "ScheduleList"{
+            let vc = segue.destinationViewController as ScheduleListViewController
+            vc.classesList = classesList
+            //vc.delegate = self
+        }
+    }
     
     
     override func viewDidLoad() {
