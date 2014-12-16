@@ -10,6 +10,26 @@
         <attribute name="tuesday" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wednesday" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
+    <entity name="Class2" representedClassName="Class" syncable="YES">
+        <attribute name="classname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="friday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="monday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="thursday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tuesday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wednesday" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="Class3" representedClassName="Class" syncable="YES">
+        <attribute name="classname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="friday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="monday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="thursday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tuesday" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wednesday" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
     <entity name="Schedule" representedClassName="Schedule" syncable="YES">
         <attribute name="schedulename" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="myClasses" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Class" syncable="YES"/>
@@ -17,5 +37,7 @@
     <elements>
         <element name="Class" positionX="-308" positionY="-61" width="128" height="165"/>
         <element name="Schedule" positionX="-306" positionY="0" width="128" height="75"/>
+        <element name="Class2" positionX="-315" positionY="0" width="128" height="163"/>
+        <element name="Class3" positionX="-306" positionY="36" width="128" height="165"/>
     </elements>
 </model>

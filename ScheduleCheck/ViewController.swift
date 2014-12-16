@@ -38,9 +38,9 @@ class classTime {
         days1 = days
     }
     
-    var startTime1:Int?
+    var startTime1:Int = 0
     
-    var endTime1:Int?
+    var endTime1:Int = 0
     
     var days1:Array<Bool> = []
 }
@@ -80,20 +80,28 @@ class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewCon
         
         if monSwitch.on {
             classDays[0] = true
+        } else {
+            classDays[0] = false
         }
         if tuesSwitch.on {
             classDays[1] = true
+        } else {
+            classDays[1] = false
         }
-        
         if wedSwtich.on {
             classDays[2] = true
+        } else {
+            classDays[2] = false
         }
         if thursSwitch.on {
             classDays[3] = true
+        } else {
+            classDays[3] = false
         }
-        
         if friSwitch.on {
             classDays[4] = true
+        } else {
+            classDays[4] = false
         }
         
         
