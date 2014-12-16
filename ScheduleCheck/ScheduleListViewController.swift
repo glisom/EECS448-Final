@@ -21,6 +21,10 @@ class ScheduleListViewController: UITableViewController {
     var schedules:[[studentClass]] = []
     
     var selectedRow = 0
+    
+    override func viewWillAppear(animated: Bool) {
+        self.tableView.reloadData()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

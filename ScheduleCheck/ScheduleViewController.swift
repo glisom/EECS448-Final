@@ -573,20 +573,27 @@ class ScheduleViewController: UIViewController {
 
     
     @IBAction func saveButton(sender:AnyObject) {
-        var entName = "Class"
+        var saveSpot = multiSave()
         
-        let appDeli:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let contexti:NSManagedObjectContext = appDeli.managedObjectContext!
-        let requesti = NSFetchRequest(entityName: "Class")
-        requesti.returnsObjectsAsFaults = false;
-        var results:NSArray = contexti.executeFetchRequest(requesti, error: nil)!
-        
-        if results.count == 0 {
-            entName = "Count1"
+        switch saveSpot {
+        case 1:
+            entName = "Class"
+            
+        case 2:
+            entName = "Class2"
+            
+        case 3:
+            entName = "Class3"
+            
+        case 4:
+            entName = "Error"
+            
+        default:
+            break;
         }
         
-        
         for currClass in currSchedule {
+        
             let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
             let context:NSManagedObjectContext = appDel.managedObjectContext!
             
@@ -630,16 +637,36 @@ class ScheduleViewController: UIViewController {
         
     }
     
-    func multiSave() -> Bool {
+    func multiSave() -> Int {
         let appDeli:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let contexti:NSManagedObjectContext = appDeli.managedObjectContext!
-        let requesti = NSFetchRequest(entityName: "Class")
+        var contexti:NSManagedObjectContext = appDeli.managedObjectContext!
+        var requesti = NSFetchRequest(entityName: "Class")
         requesti.returnsObjectsAsFaults = false;
         var results:NSArray = contexti.executeFetchRequest(requesti, error: nil)!
         
+        let appDeli2:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var contexti2:NSManagedObjectContext = appDeli2.managedObjectContext!
+        var requesti2 = NSFetchRequest(entityName: "Class2")
+        requesti2.returnsObjectsAsFaults = false;
+        var results2:NSArray = contexti2.executeFetchRequest(requesti2, error: nil)!
+        
+        let appDeli3:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var contexti3:NSManagedObjectContext = appDeli3.managedObjectContext!
+        var requesti3 = NSFetchRequest(entityName: "Class3")
+        requesti3.returnsObjectsAsFaults = false;
+        var results3:NSArray = contexti.executeFetchRequest(requesti, error: nil)!
+        
         if results.count == 0 {
-            return false
+            return 1
+        } else if results2.count == 0 {
+            return 2
+        } else if results3.count == 0 {
+            return 3
+        } else {
+            return 4
         }
+        
+        
             
     }
     override func didReceiveMemoryWarning() {

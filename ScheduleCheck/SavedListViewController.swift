@@ -19,6 +19,18 @@ class SavedListViewController: UITableViewController {
     var selectedRow = 0
 
     override func viewWillAppear(animated: Bool) {
+        
+        self.tableView.reloadData()
+        
+        
+        
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.clearsSelectionOnViewWillAppear = true
+        
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
@@ -47,13 +59,7 @@ class SavedListViewController: UITableViewController {
         }
         
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.clearsSelectionOnViewWillAppear = true
-        
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
