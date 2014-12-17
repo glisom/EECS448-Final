@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+//Represents the collection of saved schedules
+
 @objc(Schedule)
 class Schedule: NSManagedObject {
     @NSManaged var schedulename:String

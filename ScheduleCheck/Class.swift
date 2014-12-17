@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 
+//Represents what a class is made of inside Core Data
+
 @objc(Class)
 class Class: NSManagedObject {
     @NSManaged var classname:String

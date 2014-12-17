@@ -9,6 +9,10 @@
 import UIKit
 import CoreData
 
+//*******************************************************//
+//   Represents a student's class                        //
+//*******************************************************//
+
 class studentClass {
     
     init(name:String, start:Int, end:Int, days:[Bool]) {
@@ -30,6 +34,10 @@ class studentClass {
     var timesOffered:[classTime] = []
 }
 
+//*******************************************************//
+//   Represents a time slot for a class                  //
+//*******************************************************//
+
 class classTime {
     
     init(start:Int, end:Int, days:[Bool]) {
@@ -44,6 +52,10 @@ class classTime {
     
     var days1:Array<Bool> = []
 }
+
+//*******************************************************//
+//   Controls the screen that adds classes               //
+//*******************************************************//
 
 class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewControllerDelegate {
     
@@ -75,6 +87,10 @@ class ViewController: UIViewController, UITextFieldDelegate, ScheduleListViewCon
         
         return list
     }
+    
+    //*******************************************************//
+    //   Creates a class object
+    //*******************************************************//
     
     @IBAction func createClicked(sender: AnyObject) {
         

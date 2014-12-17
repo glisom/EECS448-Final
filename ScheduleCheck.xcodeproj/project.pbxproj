@@ -10,6 +10,7 @@
 		7B01E4981A3F774E000BE6D7 /* SavedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E4971A3F774E000BE6D7 /* SavedListViewController.swift */; };
 		7B01E49A1A3F7764000BE6D7 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B01E4991A3F7764000BE6D7 /* SavedViewController.swift */; };
 		7B119FBC1A41153D0072FED4 /* class screen2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B119FBB1A41153D0072FED4 /* class screen2.png */; };
+		7B119FBE1A412F180072FED4 /* FeedBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B119FBD1A412F180072FED4 /* FeedBackViewController.swift */; };
 		7B643F381A3E98880088C5E5 /* ScheduleListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B643F371A3E98880088C5E5 /* ScheduleListViewController.swift */; };
 		7B79F7551A3E1EB900CB2C5F /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79F7541A3E1EB900CB2C5F /* Schedule.swift */; };
 		7B98D4E51A3CDCAE00A46761 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B98D4E41A3CDCAE00A46761 /* CoreData.framework */; };
@@ -38,6 +39,7 @@
 		7B01E4971A3F774E000BE6D7 /* SavedListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedListViewController.swift; sourceTree = "<group>"; };
 		7B01E4991A3F7764000BE6D7 /* SavedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		7B119FBB1A41153D0072FED4 /* class screen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "class screen2.png"; sourceTree = "<group>"; };
+		7B119FBD1A412F180072FED4 /* FeedBackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedBackViewController.swift; sourceTree = "<group>"; };
 		7B643F371A3E98880088C5E5 /* ScheduleListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleListViewController.swift; sourceTree = "<group>"; };
 		7B79F7541A3E1EB900CB2C5F /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		7B79F7561A3E204B00CB2C5F /* ScheduleCheck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ScheduleCheck-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				7BA2A5251A3899F900003489 /* AppDelegate.swift */,
 				7BA2A5291A3899F900003489 /* Main.storyboard */,
+				7B119FBD1A412F180072FED4 /* FeedBackViewController.swift */,
 				7B01E49D1A3F7789000BE6D7 /* Data Model */,
 				7B01E49C1A3F7775000BE6D7 /* New Schedule */,
 				7B01E49B1A3F776A000BE6D7 /* Saved Schedules */,
@@ -274,6 +277,7 @@
 				7BA2A5261A3899F900003489 /* AppDelegate.swift in Sources */,
 				7B98D5321A3D36DD00A46761 /* Class.swift in Sources */,
 				7B643F381A3E98880088C5E5 /* ScheduleListViewController.swift in Sources */,
+				7B119FBE1A412F180072FED4 /* FeedBackViewController.swift in Sources */,
 				7B01E4981A3F774E000BE6D7 /* SavedListViewController.swift in Sources */,
 				7B98D5191A3CDD1300A46761 /* ScheduleCheck.xcdatamodeld in Sources */,
 			);
