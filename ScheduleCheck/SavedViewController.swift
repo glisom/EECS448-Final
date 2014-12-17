@@ -71,27 +71,69 @@ class SavedViewController: UIViewController {
     @IBOutlet var Fri5:UILabel!
     
     @IBAction func deleteButton(sender: AnyObject) {
-        let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-        let context:NSManagedObjectContext = appDel.managedObjectContext!
-        let request = NSFetchRequest(entityName: "Class")
-        
-        var results:Array = context.executeFetchRequest(request, error: nil)!
-        
-        for i in results {
-            context.deleteObject(i as NSManagedObject)
+        if (position == 0) {
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            let request = NSFetchRequest(entityName: "Class")
+            
+            var results:Array = context.executeFetchRequest(request, error: nil)!
+            
+            for i in results {
+                context.deleteObject(i as NSManagedObject)
+            }
+            results.removeAll(keepCapacity: false)
+            
+            context.save(nil)
         }
-        results.removeAll(keepCapacity: false)
-        
-        context.save(nil)
+        if (position == 1) {
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            let request = NSFetchRequest(entityName: "Class2")
+            
+            var results:Array = context.executeFetchRequest(request, error: nil)!
+            
+            for i in results {
+                context.deleteObject(i as NSManagedObject)
+            }
+            results.removeAll(keepCapacity: false)
+            
+            context.save(nil)
+        }
+        if (position == 2) {
+            let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+            let context:NSManagedObjectContext = appDel.managedObjectContext!
+            let request = NSFetchRequest(entityName: "Class3")
+            
+            var results:Array = context.executeFetchRequest(request, error: nil)!
+            
+            for i in results {
+                context.deleteObject(i as NSManagedObject)
+            }
+            results.removeAll(keepCapacity: false)
+            
+            context.save(nil)
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var entName:String = ""
+        
+        if position == 0 {
+            entName = "Class"
+        }
+        
+        if position == 1 {
+            entName = "Class2"
+        }
+        if position == 2 {
+            entName = "Class3"
+        }
         
         let appDel:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context:NSManagedObjectContext = appDel.managedObjectContext!
         
-        let request = NSFetchRequest(entityName: "Class")
+        let request = NSFetchRequest(entityName: entName)
         request.returnsObjectsAsFaults = false;
         
         //request.predicate = NSPredicate(format: "classname = %@", className.text)
