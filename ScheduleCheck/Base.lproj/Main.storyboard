@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PTc-te-Aaj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--KU Scheduler-->
@@ -4024,6 +4025,169 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ib-WD-kKc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2430" y="1002.75"/>
+        </scene>
+        <!--Tutorial-->
+        <scene sceneID="ls1-Wg-Ysh">
+            <objects>
+                <viewController title="Tutorial" id="tdm-6Q-57Z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Hk-z0-yHF"/>
+                        <viewControllerLayoutGuide type="bottom" id="YL5-dM-yEM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QQY-1u-osE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CWw-I4-auN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3023" y="1252"/>
+        </scene>
+        <!--Feedback-->
+        <scene sceneID="IJJ-Q3-3cw">
+            <objects>
+                <viewController title="Feedback" id="rZZ-Er-QPT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DCI-q0-YCH"/>
+                        <viewControllerLayoutGuide type="bottom" id="BtU-n7-5iZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GL1-Ug-pK1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-GT-faD">
+                                <rect key="frame" x="16" y="140" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tJG-tt-oaI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="no" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="140" width="368" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rqH-kn-OuR">
+                                <rect key="frame" x="16" y="178" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="05o-Vi-Ydf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="178" width="368" height="30"/>
+                                </variation>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" indicatorStyle="white" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="LvJ-bl-P92">
+                                <rect key="frame" x="16" y="216" width="568" height="310"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="Jm0-Mn-2x6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="send"/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="216" width="368" height="310"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omn-kB-KMs">
+                                <rect key="frame" x="489" y="534" width="95" height="46"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="7lY-3S-dQq"/>
+                                    <constraint firstAttribute="width" constant="95" id="jEz-hE-F8A"/>
+                                </constraints>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Share your thoughts with us..." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x98-LX-4ql">
+                                <rect key="frame" x="16" y="55" width="279" height="77"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Omn-kB-KMs" firstAttribute="top" secondItem="LvJ-bl-P92" secondAttribute="bottom" constant="8" id="Ahz-M4-WHY"/>
+                            <constraint firstItem="LvJ-bl-P92" firstAttribute="top" secondItem="rqH-kn-OuR" secondAttribute="bottom" constant="8" id="DDI-gP-Le7"/>
+                            <constraint firstItem="rqH-kn-OuR" firstAttribute="trailing" secondItem="GL1-Ug-pK1" secondAttribute="trailingMargin" id="GqP-DA-Z2W"/>
+                            <constraint firstItem="Omn-kB-KMs" firstAttribute="trailing" secondItem="GL1-Ug-pK1" secondAttribute="trailingMargin" id="Hrc-ZB-fyG"/>
+                            <constraint firstItem="Omn-kB-KMs" firstAttribute="top" secondItem="LvJ-bl-P92" secondAttribute="bottom" constant="8" id="Neu-AK-63X"/>
+                            <constraint firstItem="Omn-kB-KMs" firstAttribute="leading" secondItem="GL1-Ug-pK1" secondAttribute="leadingMargin" constant="473" id="S65-7U-OoN"/>
+                            <constraint firstItem="cQb-GT-faD" firstAttribute="trailing" secondItem="GL1-Ug-pK1" secondAttribute="trailingMargin" id="UYQ-Va-lvF"/>
+                            <constraint firstItem="BtU-n7-5iZ" firstAttribute="top" secondItem="Omn-kB-KMs" secondAttribute="bottom" constant="20" id="Ux2-ml-CRE"/>
+                            <constraint firstItem="rqH-kn-OuR" firstAttribute="top" secondItem="cQb-GT-faD" secondAttribute="bottom" constant="8" id="XGQ-5W-qjH"/>
+                            <constraint firstItem="cQb-GT-faD" firstAttribute="leading" secondItem="GL1-Ug-pK1" secondAttribute="leadingMargin" id="Z4e-gH-vFW"/>
+                            <constraint firstItem="rqH-kn-OuR" firstAttribute="top" secondItem="cQb-GT-faD" secondAttribute="bottom" constant="8" id="dN8-Ug-F0j"/>
+                            <constraint firstItem="LvJ-bl-P92" firstAttribute="leading" secondItem="GL1-Ug-pK1" secondAttribute="leadingMargin" id="eBs-u3-mlJ"/>
+                            <constraint firstItem="cQb-GT-faD" firstAttribute="top" secondItem="x98-LX-4ql" secondAttribute="bottom" constant="8" id="fcR-oX-Abk"/>
+                            <constraint firstItem="cQb-GT-faD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="DCI-q0-YCH" secondAttribute="bottom" constant="8" id="mG8-Es-fAF"/>
+                            <constraint firstItem="rqH-kn-OuR" firstAttribute="leading" secondItem="GL1-Ug-pK1" secondAttribute="leadingMargin" id="meS-Ga-uTa"/>
+                            <constraint firstItem="x98-LX-4ql" firstAttribute="leading" secondItem="GL1-Ug-pK1" secondAttribute="leadingMargin" id="xGs-xj-INW"/>
+                            <constraint firstItem="LvJ-bl-P92" firstAttribute="trailing" secondItem="GL1-Ug-pK1" secondAttribute="trailingMargin" id="zo2-xO-5vR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="hbt-df-ItN"/>
+                    <connections>
+                        <outlet property="popo" destination="Omn-kB-KMs" id="NOj-Lt-EVD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JaF-aE-hFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3023" y="1995"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="KPZ-fF-FOK">
+            <objects>
+                <viewController title="About" id="1nk-Xs-Ti0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UJz-i0-6Rg"/>
+                        <viewControllerLayoutGuide type="bottom" id="kbo-CL-QAz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J7b-Sy-kdX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBC-fq-9XD">
+                                <string key="text">This purpose of this app is to assist students in planning the most time-efficent schedule as possible for the upcoming semester. With your input, APP NAME HERE will generate all possible scheudles for you to choose from. </string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTM-Uk-QLZ">
+                                <rect key="frame" x="51" y="161" width="498" height="136"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">      The purpose of this app is to assist students in planning the most time-efficent schedule as possible for the upcoming semester. With your input, APP NAME HERE will generate all possible cheudles for you to choose from.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alpha Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ0-3w-UWv">
+                                <rect key="frame" x="0.0" y="20" width="600" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="oTM-Uk-QLZ" firstAttribute="top" secondItem="UJz-i0-6Rg" secondAttribute="bottom" constant="50" id="DT2-V1-x0q"/>
+                            <constraint firstItem="oTM-Uk-QLZ" firstAttribute="trailing" secondItem="J7b-Sy-kdX" secondAttribute="trailingMargin" constant="50" id="Jl6-93-nbq"/>
+                            <constraint firstItem="oTM-Uk-QLZ" firstAttribute="leading" secondItem="J7b-Sy-kdX" secondAttribute="leadingMargin" constant="50" id="LHe-aO-mS7"/>
+                            <constraint firstItem="kbo-CL-QAz" firstAttribute="top" secondItem="oTM-Uk-QLZ" secondAttribute="bottom" constant="150" id="Pxd-dy-HFb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QSM-hJ-bla" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2122" y="1995"/>
         </scene>
     </scenes>
 </document>
